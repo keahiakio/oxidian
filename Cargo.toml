@@ -2,8 +2,13 @@
 name = "oxidian"
 version = "0.1.0"
 edition = "2021"
-authors = ["keahiakio"]
+authors = ["Kiwi Akio <keahiakio@users.noreply.github.com>"]
 description = "A fast CLI & Neovim-aesthetic TUI for Obsidian vaults in Rust"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/keahiakio/oxidian"
+readme = "README.md"
+keywords = ["obsidian", "neovim", "tui", "ratatui", "markdown"]
+categories = ["command-line-utilities"]
 
 [dependencies]
 ratatui = "0.29"

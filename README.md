@@ -194,3 +194,17 @@ Stored automatically in `~/.config/oxidian/config.json`:
 cargo build --release
 install -m 755 target/release/oxidian ~/.local/bin/
 ```
+
+---
+
+## (•‿•) License
+
+Dual-licensed under either of:
+
+- **MIT License** ([LICENSE-MIT](LICENSE-MIT) or <https://opensource.org/licenses/MIT>)
+- **Apache License, Version 2.0** ([LICENSE-APACHE](LICENSE-APACHE) or <https://www.apache.org/licenses/LICENSE-2.0>)
+
+at your option.
+
+All third-party dependencies used in this crate are 100% compliant and permissive (MIT, Apache-2.0, or BSD-compatible).
+
