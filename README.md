@@ -40,64 +40,25 @@
 ## (★ω★) Graphical TUI in Action
 
 ### 1. Main Workspace Layout
-```text
-+--------------------------------------------------------------------------------+
-| [Vault: work_vault] | 2026-W42 [x] | System Architecture [x] | API Design [x]  |
-+--------------------+---------------------------------------+-------------------+
-| EXPLORER           | System Architecture                   | BACKLINKS & GRAPH |
-| v Projects         |   1 | # System Architecture           | Tags              |
-|     Architecture   |   2 |                                 |   #infra  #design |
-|     Database       |   3 | [x] Draft initial RFC           |                   |
-| v Weekly Notes     |   4 | [ ] Review edge cache latency   | Incoming (2)      |
-|     2026-W42       |   5 |                                 |   -> 2026-W42     |
-|     2026-W41       |   6 | [[API Specification]]           |   -> API Design   |
-| > Reference        |   7 |                                 |                   |
-| > Templates        |   8 | > [!NOTE] Performance Target    | Outgoing (3)      |
-|                    |   9 |   Ensure p99 latency stays      |   * API Spec      |
-|                    |  10 |   under 15ms at edge nodes.     |   * Edge Cache    |
-|                    |  11 |                                 |   ? Phantom Note  |
-+--------------------+---------------------------------------+-------------------+
-| NORMAL  work_vault  System Architecture | Links: 2 | 850w | 6:11 (54%) | Theme |
-+--------------------------------------------------------------------------------+
-```
+![Main Workspace Layout with Open Note](oxidian_open_note.png)
+
+#### Landing Screen (Explorer Focus)
+![Main Workspace Landing Screen](oxidian_landing.png)
 
 ---
 
 ### 2. Telescope Fuzzy Finder (`<Space>ff` or `<Ctrl-p>`)
-```text
-+----------------------- TELESCOPE FIND FILE (24 matches) -----------------------+
-| > Architecture_                                                                |
-+-------------------------------------------------+------------------------------+
-| >> System Architecture   (Projects/Arch.md)     | # System Architecture        |
-|    Security Architecture (Projects/Sec.md)      | Path: Projects/Arch.md       |
-|    Architecture Review   (Weekly/2026-W40.md)   | Words: 850                   |
-|    Network Topology      (Infra/Network.md)     | ---------------------------- |
-|    Storage Cluster RFC   (Infra/Storage.md)     | Core design document for the |
-|    Database Schema       (Data/Schema.md)       | high-throughput distributed  |
-|    API Gateway Config    (Services/Gateway.md)  | edge routing tier...         |
-+-------------------------------------------------+------------------------------+
-```
+![Telescope Fuzzy Finder](oxidian_fuzzy.png)
 
 ---
 
 ### 3. First-Run Setup & Vault Suggestion Wizard (`oxidian --setup`)
-```text
-+--------------------------- OXIDIAN FIRST-TIME SETUP ---------------------------+
-|   ██████╗ ██╗  ██╗██╗██████╗ ██╗ █████╗ ███╗   ██╗                             |
-|  ██╔═══██╗╚██╗██╔╝██║██╔══██╗██║██╔══██╗████╗  ██║                             |
-|  ██║   ██║ ╚███╔╝ ██║██║  ██║██║███████║██╔██╗ ██║                             |
-|  Obsidian CLI & Neovim TUI in Rust                                             |
-|                                                                                |
-|  [1. Select Vault] -> 2. Choose Theme -> 3. Confirm                            |
-| +----------------------------------------------------------------------------+ |
-| | Detected Installed Obsidian Vaults:                                        | |
-| |   [*] work_vault       (/home/user/vaults/work_vault)                      | |
-| |   [ ] personal_notes   (/home/user/vaults/personal_notes)                  | |
-| |   [ ] Specify custom vault path...                                         | |
-| +----------------------------------------------------------------------------+ |
-|  [j/k or Up/Down]: Navigate  |  [Enter/Space]: Select & Continue  |  [q]: Quit |
-+--------------------------------------------------------------------------------+
-```
+
+#### Step 1: Vault Selection
+![First-Run Setup - Select Vault](oxidian_setup.png)
+
+#### Step 2: Theme Selection
+![First-Run Setup - Choose Theme](oxidian_theme.png)
 
 ---
 
