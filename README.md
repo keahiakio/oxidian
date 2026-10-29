@@ -28,11 +28,11 @@
   - **Render-Markdown Formatting**: Styled headers (`#`, `##`), checkboxes (`[ ]` / `[x]`), callouts (`> [!NOTE]`, `> [!TIP]`, `> [!WARNING]`), and code blocks.
   - **Themes**: Pre-configured with **Catppuccin Mocha**, **Gruvbox Material**, **Everforest**, and **OneDark**. Cycle anytime with `t`.
 - **[o_o] Telescope / Fzf Fuzzy Finding**: Floating modal picker for filename search (`<Space>ff` or `Ctrl-P`) and live grep (`<Space>fg`) with real-time split preview.
-- **(* ^ ω ^) Obsidian Knowledge Graph**:
+- **( ^ ω ^)** **Obsidian Knowledge Graph**:
   - Live **Backlinks panel** (`<Space>b`) showing notes linking to the current file.
   - Interactive **Wiki-link Traversal**: Jump straight to `[[note]]` targets under cursor with `gd` or `<CR>`.
   - Jump back and forward in note history with `<Ctrl-o>` and `<Ctrl-i>`.
-- **(ﾉ◕ヮ◕)ﾉ*:･ﾟ Seamless Neovim Handoff**: Press `e` on any note to temporarily suspend the TUI and launch your actual **`nvim`** configuration (with all your LSP, markdown, and completion plugins). When you quit (`:q`), `oxidian` cleanly flushes the buffer cache, restores the alternate screen, and repaints in-place.
+- **(ﾉ◕ヮ◕)ﾉ**:･ﾟ **Seamless Neovim Handoff**: Press `e` on any note to temporarily suspend the TUI and launch your actual **`nvim`** configuration (with all your LSP, markdown, and completion plugins). When you quit (`:q`), `oxidian` cleanly flushes the buffer cache, restores the alternate screen, and repaints in-place.
 - **(・∀・) Daily Notes**: Quickly open or create today's daily note with `<Space>d`.
 
 ---
