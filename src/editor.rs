@@ -1,15 +1,20 @@
 use std::path::Path;
 use std::process::Command;
 use crossterm::{
+    cursor::{Hide, Show},
     execute,
-    terminal::{disable_raw_mode, enable_raw_mode, EnterAlternateScreen, LeaveAlternateScreen},
+    terminal::{
+        disable_raw_mode, enable_raw_mode, Clear, ClearType, EnterAlternateScreen,
+        LeaveAlternateScreen,
+    },
 };
 
 pub fn open_in_neovim(file_path: &Path, editor_bin: &str) -> Result<(), std::io::Error> {
-    // 1. Temporarily leave alternate screen and disable raw mode
     let mut stdout = std::io::stdout();
+
+    // 1. Leave alternate screen, show cursor, disable raw mode
     let _ = disable_raw_mode();
-    let _ = execute!(stdout, LeaveAlternateScreen);
+    let _ = execute!(stdout, LeaveAlternateScreen, Show);
 
     // 2. Launch Neovim
     let editor = if editor_bin.is_empty() {
@@ -24,9 +29,14 @@ pub fn open_in_neovim(file_path: &Path, editor_bin: &str) -> Result<(), std::io:
 
     let _ = child.wait();
 
-    // 3. Restore alternate screen and raw mode for Oxidian TUI
+    // 3. Restore alternate screen, raw mode, hide cursor, and clear screen buffer
     let _ = enable_raw_mode();
-    let _ = execute!(stdout, EnterAlternateScreen);
+    let _ = execute!(
+        stdout,
+        EnterAlternateScreen,
+        Hide,
+        Clear(ClearType::All)
+    );
 
     Ok(())
 }

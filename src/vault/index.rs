@@ -74,7 +74,7 @@ impl VaultIndex {
             }
         }
 
-        Self {
+        let mut index = Self {
             root,
             name,
             notes,
@@ -82,6 +82,34 @@ impl VaultIndex {
             backlinks,
             tags,
             files,
+        };
+        index.rebuild_backlinks();
+        index
+    }
+
+    pub fn rebuild_backlinks(&mut self) {
+        let mut backlinks: HashMap<PathBuf, HashSet<PathBuf>> = HashMap::new();
+        for (src_path, note) in &self.notes {
+            for link in &note.outgoing_links {
+                let target_lower = link.target.trim().to_lowercase();
+                let target_stem = target_lower.strip_suffix(".md").unwrap_or(&target_lower);
+                if let Some(target_path) = self.title_to_path.get(target_stem) {
+                    backlinks
+                        .entry(target_path.clone())
+                        .or_default()
+                        .insert(src_path.clone());
+                }
+            }
+        }
+        self.backlinks = backlinks;
+    }
+
+    pub fn refresh_note(&mut self, path: &Path) {
+        if let Ok(note) = Note::load(&self.root, path) {
+            let stem_lower = note.title.to_lowercase();
+            self.title_to_path.insert(stem_lower, path.to_path_buf());
+            self.notes.insert(path.to_path_buf(), note);
+            self.rebuild_backlinks();
         }
     }
 

@@ -143,6 +143,11 @@ fn main() -> Result<()> {
 
     // Main event loop
     loop {
+        if app.needs_clear {
+            terminal.clear()?;
+            app.needs_clear = false;
+        }
+
         terminal.draw(|f| {
             ui::render_main_ui(f, &mut app);
         })?;

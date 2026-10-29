@@ -32,6 +32,7 @@ pub struct App {
     // Leader key state (<Space>)
     pub leader_active: bool,
     pub should_quit: bool,
+    pub needs_clear: bool,
 }
 
 impl App {
@@ -81,6 +82,7 @@ impl App {
             history_forward: Vec::new(),
             leader_active: false,
             should_quit: false,
+            needs_clear: false,
         }
     }
 
@@ -302,9 +304,11 @@ impl App {
                 if let Some(note) = self.current_note() {
                     let path = note.path.clone();
                     let _ = open_in_neovim(&path, &self.config.editor);
-                    // Reload note after editing
-                    self.reload_vault(self.vault.root.clone(), self.vault.name.clone());
-                    self.open_note_path(path, false);
+                    // Refresh just this note in index (preserves open tabs and cursor!)
+                    self.vault.refresh_note(&path);
+                    let note_ref = self.vault.notes.get(&path);
+                    self.backlinks.update(note_ref, &self.vault);
+                    self.needs_clear = true;
                 }
                 return;
             }
