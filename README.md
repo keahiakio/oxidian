@@ -305,3 +305,9 @@ Dual-licensed under either of:
 at your option.
 
 All third-party dependencies used in this crate are 100% compliant and permissive (MIT, Apache-2.0, or BSD-compatible).
+
+---
+
+## AI Disclosure
+
+This is an AI-assisted project. Code and documentation were developed with the assistance of AI tools.
