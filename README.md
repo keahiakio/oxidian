@@ -295,6 +295,14 @@ When you press `e` inside `oxidian`, it suspends the TUI and launches your confi
 
 ---
 
+## (っ˘ڡ˘ς) Contributing & Community
+
+Contributions, issue reports, keybinding suggestions, and custom themes are warmly welcomed! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for local development instructions, testing guidelines, and our PR workflow. All contributors are expected to adhere to our [Code of Conduct](CODE_OF_CONDUCT.md).
+
+For vulnerability reporting, please review our [Security Policy](SECURITY.md).
+
+---
+
 ## (•‿•) License
 
 Dual-licensed under either of:
